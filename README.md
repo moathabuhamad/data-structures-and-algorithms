@@ -9,3 +9,5 @@
 ### [Challenge 03](javascript/code-challenges/Challenge03/README.md)
 
 ### [Challenge 04](javascript/code-challenges/Challenge04/README.MD)
+
+### [Challenge 05](javascript/code-challenges/Challenge05/README.MD)
