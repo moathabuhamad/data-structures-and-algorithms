@@ -10,4 +10,5 @@
 
 ### [Challenge 04](javascript/code-challenges/Challenge04/README.MD)
 
-### [Challenge 05](javascript/code-challenges/Challenge05)
+### [LinkedList](javascript/code-challenges/LinkedList/README.MD)
+
