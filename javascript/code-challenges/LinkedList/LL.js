@@ -37,7 +37,7 @@ class LinkedList {
       nodeString = nodeString + `{${currentNode.value}} -> `;
       currentNode = currentNode.next;
     }
-    return (nodeString + "NULL");
+    return nodeString + "NULL";
   }
 
   append(value) {
@@ -89,6 +89,27 @@ class LinkedList {
       current = current.next;
     }
     return "Exception";
+  }
+
+  kthFromEnd(k) {
+    if (k < 0) {
+      return "exception";
+    }
+
+    let current = this.head;
+    let laggingPointer = this.head;
+    let lead = 0;
+    while (current.next) {
+      current = current.next;
+      if (lead >= k) {
+        laggingPointer = laggingPointer.next;
+      }
+      lead += 1;
+    }
+    if (k >= lead + 1) {
+      return "exception";
+    }
+    return laggingPointer.value;
   }
 }
 

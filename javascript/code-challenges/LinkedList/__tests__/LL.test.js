@@ -99,4 +99,19 @@ it('testing insertAfter() method', () => {
   expect(listString).toEqual('{0} -> {1} -> {2} -> {3} -> {B} -> NULL');
 });
 
+it('testing kthFromEnd()',()=>{
+  let list = new LinkedList();
+  list.append(0);
+  expect(list.kthFromEnd(-1)).toEqual('exception');
+  expect(list.kthFromEnd(0)).toEqual(0);
+  expect(list.kthFromEnd(1)).toEqual('exception');
+  list.append(1);
+  list.append(2);
+  list.append(3);
+  expect(list.kthFromEnd(2)).toEqual(1);
+  expect(list.kthFromEnd(0)).toEqual(3);
+  expect(list.kthFromEnd(10)).toEqual('exception');
+
+});
+
 });
