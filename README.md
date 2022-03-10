@@ -10,5 +10,6 @@
 
 ### [Challenge 04](javascript/code-challenges/Challenge04/README.MD)
 
-### [LinkedList](javascript/code-challenges/LinkedList/README.MD)
+### [Linked List Insertion](javascript/code-challenges/LinkedList/README2.MD)
+### [Linked List kthFromEnd](javascript/code-challenges/LinkedList/README3.MD)
 
