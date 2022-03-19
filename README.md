@@ -10,3 +10,4 @@
 ### [Linked List kthFromEnd](javascript/code-challenges/LinkedList/README3.MD)
 ### [Linked List Zip](javascript/code-challenges/LinkedList/README4.MD)
 ### [Stack And Queue](javascript/code-challenges/stack-and-que/stack-and-que.md)
+### [Stack with Queue](javascript/code-challenges/stack-queue-pseudo/README.md)
