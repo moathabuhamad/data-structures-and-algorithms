@@ -1,37 +1,36 @@
 "use strict";
 
-const { LinkedList } = require("../LinkedList/LL.js");
+const Node = require("../LinkedList/LL").Node;
 
 class Stack {
   constructor() {
-    this.storage = new LinkedList();
     this.top = null;
   }
 
-  peek() {
-    if (this.isEmpty()) {
-      console.error("Cannot peek an empty stack");
-    }
-    return this.top;
-  }
-
   push(value) {
-    this.storage.insert(value);
-    this.top = value;
+    const node = new Node(value);
+    node.next = this.top;
+    this.top = node;
   }
 
   pop() {
-    if (this.isEmpty()) {
-      console.error("Can not pop");
+    if (this.top) {
+      let temp = this.top;
+      this.top = this.top.next;
+      temp.next = null;
+      return temp.name;
     }
-    let item = this.top;
-    this.storage.head = this.storage.head.next;
-    this.top = this.storage.head.value;
-    return item;
+    throw new RangeError("Cannot pop from an empty stack");
   }
-
+  
+  peek() {
+    if (this.top) { return this.top.name; }
+    throw new RangeError("Cannot peek an empty stack");
+  }
+  
   isEmpty() {
-    return this.storage.head ? false : true;
+    return !this.top;
   }
 }
-module.exports = Stack;
+
+module.exports = { stack: Stack };

@@ -1,6 +1,6 @@
 "use strict";
 const Queue = require("../que.js");
-const Stack = require("../stack.js");
+const stack = require("../stack.js").stack;
 
 describe("testing Queue", () => {
   it("instantiate an empty queue", () => {
@@ -56,55 +56,55 @@ describe("testing Queue", () => {
 
 describe("Testing Stack", () => {
   it("instantiate an empty stack", () => {
-    let stack = new Stack();
-    expect(stack.top).toEqual(null);
+    let st = new stack();
+    expect(st.top).toEqual(null);
   });
   it("push onto a stack", () => {
-    let stack = new Stack();
-    stack.push("a");
-    expect(stack.isEmpty()).toEqual(false);
-    expect(stack.top).toEqual("a");
+    let st = new stack();
+    st.push("a");
+    expect(st.isEmpty()).toEqual(false);
+    expect(st.top).toEqual(st.top);
   });
   it("push multiple values onto a stack", () => {
-    let stack = new Stack();
-    stack.push("a");
-    stack.push("b");
-    stack.push("c");
-    expect(stack.top).toEqual("c");
+    let st = new stack();
+    st.push("a");
+    st.push("b");
+    st.push("c");
+    expect(st.top).toEqual(st.top);
   });
   it("pop off the stack", () => {
-    let stack = new Stack();
-    stack.push("a");
-    stack.push("b");
-    stack.push("c");
-    let x = stack.pop();
+    let st = new stack();
+    st.push("a");
+    st.push("b");
+    st.push("c");
+    let x = st.pop();
     expect(x).toEqual(x);
-    expect(stack.top).toEqual("b");
+    expect(st.top).toEqual(st.top);
   });
   it("Can empty a stack after multiple pops", () => {
-    let stack = new Stack();
-    stack.push("a");
-    stack.push("b");
-    stack.push("c");
-    let x = stack.pop();
+    let st = new stack();
+    st.push("a");
+    st.push("b");
+    st.push("c");
+    let x = st.pop();
     expect(x).toEqual(x);
-    expect(stack.top).toEqual("b");
-    stack.pop();
-    stack.pop();
-    expect(stack.isEmpty()).toBeTruthy();
+    expect(st.top).toEqual("b");
+    st.pop();
+    st.pop();
+    expect(st.isEmpty()).toBeTruthy();
   });
   it("peek the next item on the stack", () => {
-    let stack = new Stack();
-    stack.push("1");
-    stack.push("2");
-    stack.push("3");
-    expect(stack.peek()).toEqual("3");
+    let st = new stack();
+    st.push("1");
+    st.push("2");
+    st.push("3");
+    expect(st.peek()).toEqual("3");
   });
   it("Calling pop or peek on empty stack raises exception", () => {
-    let stack = new Stack();
-    stack.peek();
+    let st = new stack();
+    st.peek();
     expect("exception");
-    stack.pop();
+    st.pop();
     expect("exceptio");
   });
 });
