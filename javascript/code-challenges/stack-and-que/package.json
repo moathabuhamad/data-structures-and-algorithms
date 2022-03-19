@@ -1,0 +1,16 @@
+{
+  "name": "stack-and-que",
+  "version": "1.0.0",
+  "description": "",
+  "main": "que.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}
