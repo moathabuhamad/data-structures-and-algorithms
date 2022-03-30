@@ -1,0 +1,15 @@
+{
+  "name": "tree",
+  "version": "1.0.0",
+  "description": "### Challenge - Write a binary tree class with `preOrder()`, `inOrder()`, and `postOrder()` methods.  - Write a binary search tree class with `add()` and `contains()` methods. - Write an instance method called `findMaximumValue()`. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric. - Write a new method called `breadthFirst()`, will take a binaryTree as input and return a list of the values from the tree in thee order they were encountered",
+  "main": "tree.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
