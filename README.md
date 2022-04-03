@@ -13,3 +13,4 @@
 ### [Stack with Queue](javascript/code-challenges/stack-queue-pseudo/README.md)
 ### [Brackets Validation](javascript/code-challenges/stack-que-brackets/brackets.md)
 ### [Trees](javascript/code-challenges/tree/readme.md)
+### [Stack And Queue Animal Shelter](javascript/code-challenges/Challenge12/animalShelter.md)
