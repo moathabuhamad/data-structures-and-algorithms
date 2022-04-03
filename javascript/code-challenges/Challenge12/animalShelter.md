@@ -1,4 +1,4 @@
-# FIFO Animal Shelter
+#Animal Shelter
 Insert and shift an array in middle at index.
 
 ## Challenge
