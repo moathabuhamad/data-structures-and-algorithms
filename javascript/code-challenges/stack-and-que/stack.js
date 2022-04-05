@@ -18,7 +18,7 @@ class Stack {
       let temp = this.top;
       this.top = this.top.next;
       temp.next = null;
-      return temp.name;
+      return temp.value;
     }
     throw new RangeError("Cannot pop from an empty stack");
   }
