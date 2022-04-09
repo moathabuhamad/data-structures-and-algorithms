@@ -20,14 +20,19 @@ class Stack {
       temp.next = null;
       return temp.value;
     }
-    throw new RangeError("Cannot pop from an empty stack");
+    else {
+      console.error("exception: stack is empty");
+    }
   }
-  
+
   peek() {
-    if (this.top) { return this.top.name; }
-    throw new RangeError("Cannot peek an empty stack");
+    if (this.top) {
+      return this.top.value;
+    } else {
+      console.error("exception: stack is empty");
+    }
   }
-  
+
   isEmpty() {
     return !this.top;
   }

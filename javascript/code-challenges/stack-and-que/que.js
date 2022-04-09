@@ -15,32 +15,27 @@ class Queue {
 
   dequeue() {
     if (this.isEmpty()) {
-      console.error("Can not pop");
+      console.error("exception: queue is empty");
+    } else {
+      let item = this.front;
+      this.storage.head = this.storage.head.next;
+      if (this.storage.head) {
+        this.front = this.storage.head.value;
+      }
+      return item;
     }
-
-    let item = this.front;
-    this.storage.head = this.storage.head.next;
-    this.front = this.storage.head.value;
-    return item;
   }
 
   peek() {
     if (this.isEmpty()) {
-      console.error("you can not peek and Empty Queue");
+      console.error("exception: queue is empty");
     }
-    return this.front;
+    else{return this.front;}
   }
 
   isEmpty() {
     return this.storage.head ? false : true;
   }
 }
-
-let qq = new Queue;
-
-
-console.log(qq.peek());
-
-
 
 module.exports = Queue;

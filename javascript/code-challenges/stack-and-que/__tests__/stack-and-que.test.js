@@ -3,6 +3,16 @@ const Queue = require("../que.js");
 const stack = require("../stack.js").stack;
 
 describe("testing Queue", () => {
+  let consoleSpy;
+  beforeEach(() => {
+    consoleSpy = jest.spyOn(console, "error").mockImplementation();
+  });
+  afterEach[
+    () => {
+      consoleSpy.mockRestore();
+    }
+  ];
+
   it("instantiate an empty queue", () => {
     let que = new Queue();
     expect(que.front).toBeNull;
@@ -49,12 +59,23 @@ describe("testing Queue", () => {
     let emptyQue = new Queue();
     expect(emptyQue.isEmpty).toBeTruthy();
     emptyQue.dequeue();
+    expect(consoleSpy).toHaveBeenCalledWith("exception: queue is empty");
     emptyQue.peek();
     expect(consoleSpy).toHaveBeenCalledWith("exception: queue is empty");
   });
 });
 
 describe("Testing Stack", () => {
+  let consoleSpy;
+  beforeEach(() => {
+    consoleSpy = jest.spyOn(console, "error").mockImplementation();
+  });
+  afterEach[
+    () => {
+      consoleSpy.mockRestore();
+    }
+  ];
+
   it("instantiate an empty stack", () => {
     let st = new stack();
     expect(st.top).toEqual(null);
@@ -88,7 +109,7 @@ describe("Testing Stack", () => {
     st.push("c");
     let x = st.pop();
     expect(x).toEqual(x);
-    expect(st.top).toEqual("b");
+    expect(st.top.value).toEqual("b");
     st.pop();
     st.pop();
     expect(st.isEmpty()).toBeTruthy();
@@ -103,8 +124,8 @@ describe("Testing Stack", () => {
   it("Calling pop or peek on empty stack raises exception", () => {
     let st = new stack();
     st.peek();
-    expect("exception");
+    expect(consoleSpy).toHaveBeenCalledWith("exception: stack is empty");
     st.pop();
-    expect("exceptio");
+    expect(consoleSpy).toHaveBeenCalledWith("exception: stack is empty");
   });
 });
