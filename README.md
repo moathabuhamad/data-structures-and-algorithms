@@ -15,5 +15,7 @@
 ### [Trees](javascript/code-challenges/tree/readme.md)
 ### [Stack And Queue Animal Shelter](javascript/code-challenges/Challenge12/animalShelter.md)
 ### [Fizz Buzz Trees](javascript/code-challenges/fizzBuzzTree/fizzBuzzTree.md)
-### [Hashtables](javascript/code-challenges/Hashtables/readme.md)
 ### [Merge Sort](javascript/code-challenges/merge-sort/readme.md)
+### [Insertion Sort](javascript/code-challenges/insertion-sort/readme.md)
+### [Hashtables](javascript/code-challenges/Hashtables/readme.md)
+
