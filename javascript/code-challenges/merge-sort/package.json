@@ -1,0 +1,15 @@
+{
+  "name": "merge-sort",
+  "version": "1.0.0",
+  "description": "## Pseudo Code",
+  "main": "merg-sort.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
