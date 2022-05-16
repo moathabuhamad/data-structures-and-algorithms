@@ -18,4 +18,4 @@
 ### [Merge Sort](javascript/code-challenges/merge-sort/readme.md)
 ### [Insertion Sort](javascript/code-challenges/insertion-sort/readme.md)
 ### [Hashtables](javascript/code-challenges/Hashtables/readme.md)
-
+### [Repeated-word](javascript/code-challenges/repeated-word/readme.md)
