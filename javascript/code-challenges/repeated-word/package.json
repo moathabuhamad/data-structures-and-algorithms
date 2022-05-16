@@ -1,0 +1,15 @@
+{
+  "name": "repeated-word",
+  "version": "1.0.0",
+  "description": "",
+  "main": "repeatedWord.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
