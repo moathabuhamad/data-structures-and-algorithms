@@ -20,3 +20,4 @@
 ### [Hashtables](javascript/code-challenges/Hashtables/readme.md)
 ### [Repeated word](javascript/code-challenges/repeated-word/readme.md)
 ### [Tree Intersection](javascript/code-challenges/TreeIntersection/README.MD)
+### [Left Join](javascript/code-challenges/leftjoin/leftJoin.md)
