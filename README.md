@@ -21,3 +21,4 @@
 ### [Repeated word](javascript/code-challenges/repeated-word/readme.md)
 ### [Tree Intersection](javascript/code-challenges/TreeIntersection/README.MD)
 ### [Left Join](javascript/code-challenges/leftjoin/leftJoin.md)
+### [Graphs](javascript/code-challenges/Graph/Graph.md)
