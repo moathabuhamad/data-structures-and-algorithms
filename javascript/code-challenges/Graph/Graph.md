@@ -22,4 +22,6 @@ Definning a class for Vertex, a class for edges, and a class for the graph which
    - **O(1)** for other methods
 
 ## Solution
-![](./graphTest.png)
+![](./assets/WB37.png)
+![](./assets/WB38.png)
+![](./assets/graphTest.png)

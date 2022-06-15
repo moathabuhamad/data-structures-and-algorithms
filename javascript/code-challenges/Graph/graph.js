@@ -1,57 +1,117 @@
 "use strict";
 
-class Vertex {
-  constructor(value) {
-    this.value = value;
-  }
-}
-
-class Edge {
-  constructor(vertex, weight = 0) {
-    this.vertex = vertex;
-    this.weight = weight;
-  }
-}
+const Edge = require("./edge");
 
 class Graph {
   constructor() {
-    this.list = new Map();
+    this.adjacencyList = new Map();
   }
-
-  addVertex(vertex) {
-    this.list.set(vertex, []);
-    return vertex;
+  addNode(node) {
+    this.adjacencyList.set(node, []);
+    return node;
   }
-
-  addEdge(startVertex, endVertex, weight) {
-    if (!this.list.has(startVertex) || !this.list.has(endVertex)) {
-      return "Vertex not found !!!";
-    } else {
-      const adjacencies = this.list.get(startVertex);
-      adjacencies.push(new Edge(endVertex, weight));
-      return Edge;
+  addEdge(start, end, weight) {
+    if (!this.adjacencyList.has(start) || !this.adjacencyList.has(end)) {
+      console.error("One or both of the nodes does not exist");
+      return;
     }
+    const adjecencies = this.getNeighbors(start);
+    adjecencies.push(new Edge(end, weight));
   }
 
-  getNeighbours(vertex) {
-    if (!this.list.has(vertex)) {
-      return "vertex does not exist";
-    } else {
-      return this.list.get(vertex);
-    }
+  getNeighbors(node) {
+    if (!this.adjacencyList.has(node)) return null;
+    return this.adjacencyList.get(node);
   }
 
   getNodes() {
-    return this.list.entries();
+    return Array.from(this.adjacencyList.keys());
   }
 
-  getSize() {
-    return this.list.size;
+  size() {
+    if (!this.adjacencyList.size) {
+      return 0;
+    }
+    return this.adjacencyList.size;
+  }
+  bft(root) {
+    if (!root) return null;
+    let queue = [];
+    let visited = new Set();
+
+    queue.push(root);
+    visited.add(root);
+
+    let result = [root];
+    while (queue.length) {
+      const current = queue.shift();
+      const neighbors = this.getNeighbors(current);
+      for (let neighbor of neighbors) {
+        const neighborN = neighbor.vertex;
+        if (visited.has(neighborN)) {
+          continue;
+        } else {
+          result.push(neighborN);
+          visited.add(neighborN);
+        }
+        queue.push(neighborN);
+      }
+    }
+    return result;
+  }
+
+  dfs(root) {
+    if (!root) return null;
+    let stack = [];
+    let visited = new Set();
+
+    stack.push(root);
+    visited.add(root);
+
+    let result = [root];
+    while (stack.length) {
+      const current = stack.pop();
+      const neighbors = this.getNeighbors(current);
+      for (let neighbor of neighbors) {
+        const neighborN = neighbor.vertex;
+        if (visited.has(neighborN)) {
+          continue;
+        } else {
+          result.push(neighborN);
+          visited.add(neighborN);
+        }
+        stack.push(neighborN);
+      }
+    }
+    return result;
   }
 }
 
-module.exports = {
-  Vertex,
-  Edge,
-  Graph,
-};
+function businessTrip(graph, path) {
+  let cost = 0;
+  for (let i = 0; i < path.length - 1; i++) {
+    let start = path[i];
+    let end = path[i + 1];
+    let edge = graph.getNeighbors(start).find((edge) => edge.vertex === end);
+    if (!edge) return -1;
+    cost += edge.weight;
+  }
+  return cost;
+}
+
+let graph = new Graph();
+graph.addNode("Las Vegas");
+graph.addNode("Denver");
+graph.addNode("Phoenix");
+graph.addNode("Dallas");
+graph.addNode("Seattle");
+graph.addEdge("Las Vegas", "Denver", 100);
+graph.addEdge("Las Vegas", "Phoenix", 50);
+graph.addEdge("Las Vegas", "Dallas", 250);
+graph.addEdge("Denver", "Phoenix", 110);
+graph.addEdge("Denver", "Dallas", 190);
+graph.addEdge("Dallas", "Phoenix", 80);
+graph.addEdge("Dallas", "Seattle", 300);
+graph.addEdge("Phoenix", "Seattle", 120);
+
+module.exports = { Graph, businessTrip };
